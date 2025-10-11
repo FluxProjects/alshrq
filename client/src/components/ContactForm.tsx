@@ -4,6 +4,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "emailjs-com";
+
+// Replace these with your actual EmailJS credentials
+const SERVICE_ID = "service_64f16o5";
+const TEMPLATE_ID = "template_8kmzaui";
+const PUBLIC_KEY = "J79OYm995H6jSNUXD"; // aka userId
 
 export default function ContactForm() {
   const { toast } = useToast();
@@ -19,22 +25,49 @@ export default function ContactForm() {
     const checkRTL = () => {
       setIsRTL(document.documentElement.dir === 'rtl');
     };
-    
+
     checkRTL();
     const observer = new MutationObserver(checkRTL);
     observer.observe(document.documentElement, { attributes: true, attributeFilter: ['dir'] });
-    
+
     return () => observer.disconnect();
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Contact form submitted:", formData);
-    toast({
-      title: isRTL ? "تم إرسال الرسالة" : "Message Sent",
-      description: isRTL ? "شكراً لاتصالك بنا. سنرد خلال 24 ساعة." : "Thank you for contacting us. We'll respond within 24 hours.",
-    });
-    setFormData({ name: "", email: "", phone: "", message: "" });
+
+    try {
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+        },
+        PUBLIC_KEY
+      );
+
+      toast({
+        title: isRTL ? "تم إرسال الرسالة" : "Message Sent",
+        description: isRTL
+          ? "شكراً لاتصالك بنا. سنرد خلال 24 ساعة."
+          : "Thank you for contacting us. We'll respond within 24 hours.",
+      });
+
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    } catch (error) {
+      console.error("Email sending failed:", error);
+
+      toast({
+        title: isRTL ? "فشل في إرسال الرسالة" : "Message Failed",
+        description: isRTL
+          ? "حدث خطأ أثناء إرسال الرسالة. حاول مرة أخرى لاحقًا."
+          : "An error occurred while sending the message. Please try again later.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (

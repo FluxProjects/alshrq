@@ -29,12 +29,11 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
-        <BrowserRouter>
-          <Router /> 
-        </BrowserRouter>
+        <Router />
       </TooltipProvider>
     </QueryClientProvider>
   );
 }
+
 
 export default App;
