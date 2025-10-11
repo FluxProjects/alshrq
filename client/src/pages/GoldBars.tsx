@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import FloatingCallButton from "@/components/FloatingCallButton";
 import ProductCard from "@/components/ProductCard";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const allGoldBars = [
   {
@@ -68,6 +69,7 @@ const allGoldBars = [
 
 export default function GoldBars() {
   const [isRTL, setIsRTL] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const checkRTL = () => {
@@ -128,7 +130,7 @@ export default function GoldBars() {
           <div className="text-center mt-12">
             <button 
               className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-black font-semibold px-4 py-2 text-sm rounded-lg transition-all duration-300 hover:scale-105"
-              onClick={() => window.location.href = '/'}
+              onClick={() => navigate('/')}
             >
               {isRTL ? "العودة للرئيسية" : "Back to Home"}
             </button>

@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Phone, Sparkles, Crown } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Hero() {
   const [isRTL, setIsRTL] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const checkRTL = () => {
@@ -16,6 +18,10 @@ export default function Hero() {
     
     return () => observer.disconnect();
   }, []);
+
+   const handleCall = () => {
+    window.location.href = "tel:+97444123456";
+  };
 
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -98,7 +104,7 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-6 sm:mb-12 px-4">
           <Button 
             className="w-full sm:w-auto group relative overflow-hidden bg-primary hover:bg-primary/90 text-black font-semibold px-4 py-2 text-sm transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/25" 
-            onClick={() => window.location.href = "tel:+97471813696"}
+            onClick={handleCall}
             data-testid="button-hero-call"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

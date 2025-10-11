@@ -4,12 +4,14 @@ import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import RTLToggle from "./RTLToggle";
 import logoImage from '@assets/stock_images/logogold.png';
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const [location] = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isRTL, setIsRTL] = useState(false);
+  const navigate = useNavigate();
 
   const navItems = [
     { path: "/", label: "Home", labelAr: "الرئيسية" },
@@ -149,7 +151,7 @@ export default function Navbar() {
               <div className="flex items-center gap-3 mb-4">
                 <Button 
                   onClick={() => {
-                    window.location.href = "tel:+97471813696";
+                    navigate("tel:+97471813696");
                     setMobileMenuOpen(false);
                   }} 
                   className="flex-1 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-black font-semibold py-3 rounded-xl shadow-lg shadow-primary/25 transition-all duration-300" 

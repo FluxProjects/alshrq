@@ -1,5 +1,6 @@
 import ProductCard from "./ProductCard";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const featuredProducts = [
   {
@@ -74,6 +75,7 @@ export default function ProductGrid() {
   const [isRTL, setIsRTL] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [featuredSlide, setFeaturedSlide] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const checkRTL = () => {
@@ -160,7 +162,7 @@ export default function ProductGrid() {
                         </div>
                         <button 
                           className="mt-4 sm:mt-6 w-full sm:w-fit bg-primary hover:bg-primary/90 text-black font-semibold px-4 py-2 rounded-lg transition-all duration-300 hover:shadow-lg text-sm"
-                          onClick={() => window.location.href = '/contact'}
+                          onClick={() => navigate('/contact')}
                         >
                           {isRTL ? "استفسر عن هذه السبيكة" : "Inquire About This Bar"}
                         </button>
@@ -211,7 +213,7 @@ export default function ProductGrid() {
           <div className="text-center mt-8">
             <button 
               className="group relative overflow-hidden bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-black font-semibold px-4 py-2 rounded-lg shadow-lg shadow-primary/25 transition-all duration-300 hover:scale-105"
-              onClick={() => window.location.href = '/gold-bars'}
+              onClick={() => navigate('/gold-bars')}
             >
               <span className="relative z-10 text-sm">
                 {isRTL ? (

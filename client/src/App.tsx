@@ -9,6 +9,7 @@ import Contact from "@/pages/Contact";
 import Admin from "@/pages/Admin";
 import GoldBars from "@/pages/GoldBars";
 import NotFound from "@/pages/not-found";
+import { BrowserRouter } from "react-router-dom";
 
 function Router() {
   return (
@@ -28,7 +29,9 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
-        <Router />
+        <BrowserRouter>
+          <Router /> 
+        </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
   );

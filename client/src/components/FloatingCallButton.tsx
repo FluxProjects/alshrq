@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function FloatingCallButton() {
+  const navigate = useNavigate();
   const handleCall = () => {
     window.location.href = "tel:+97471813696";
   };
