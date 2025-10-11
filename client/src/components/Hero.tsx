@@ -67,7 +67,7 @@ export default function Hero() {
 
         {/* Main Heading with Premium Typography */}
         <h1 className="relative mb-4 sm:mb-6 px-2">
-          <span className={`${isRTL ? 'font-serif' : 'font-sans'} text-lg xs:text-xl sm:text-2xl md:text-4xl lg:text-5xl font-light text-white/90 leading-tight tracking-tight`}>
+          <span className={`${isRTL ? 'font-arabic-serif' : 'font-sans'} text-lg xs:text-xl sm:text-2xl md:text-4xl lg:text-5xl font-light text-white/90 leading-tight ${isRTL ? '' : 'tracking-tight'}`}>
             {isRTL ? "الشرق " : "Alshrq "}
             <span className="font-bold bg-gradient-to-r from-primary via-primary/80 to-primary bg-clip-text text-transparent">
               {isRTL ? "للتجارة في المعادن" : "Metals Trading"}

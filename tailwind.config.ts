@@ -90,6 +90,8 @@ export default {
         luxury: ["Cinzel", "Trajan Pro", "Garamond", "serif"],
         display: ["Cinzel", "serif"],
         elegant: ["Garamond", "Times New Roman", "serif"],
+        "arabic-sans": ["var(--font-arabic-sans)"],
+        "arabic-serif": ["var(--font-arabic-serif)"],
       },
       keyframes: {
         "accordion-down": {
