@@ -61,7 +61,13 @@ export default function ProductCard({ id, name, price, category, image, isNew }:
       <div className="relative p-6 bg-gradient-to-b from-slate-900 to-black">
         <div className="flex items-center justify-between mb-3">
           <p className="text-xs uppercase tracking-[0.2em] text-primary/80 font-medium" data-testid={`text-category-${id}`}>
-            {isRTL ? "سبائك الذهب" : category}
+            {isRTL ? (
+              <>
+                سبائك <span className="text-primary">الذهب</span>
+              </>
+            ) : (
+              category
+            )}
           </p>
           <div className="flex items-center gap-1">
             <Star className="h-3 w-3 fill-primary text-primary" />

@@ -95,7 +95,15 @@ export default function ProductGrid() {
             {isRTL ? "مجموعة الذهب الخاصة بنا" : "Our Gold Collection"}
           </p>
           <h2 className={`${isRTL ? 'font-serif' : 'font-sans'} text-3xl sm:text-4xl md:text-5xl text-foreground mb-6`} data-testid="text-collection-title">
-            {isRTL ? "سبائك الذهب " : <><span className="font-normal">Premium </span><span className="font-bold text-primary">Gold Bars</span></>}
+            {isRTL ? (
+              <>
+                سبائك <span className="font-bold text-primary">الذهب</span>
+              </>
+            ) : (
+              <>
+                <span className="font-normal">Premium </span><span className="font-bold text-primary">Gold Bars</span>
+              </>
+            )}
           </h2>
           <p className="text-muted-foreground text-lg max-w-4xl mx-auto" data-testid="text-collection-description">
             {isRTL ? "سبائك ذهب خالص عيار 24 معتمدة متوفرة في قطر. استثمار آمن بنقاء مضمون." : "Certified 24K pure gold bars available in Qatar. Secure investment with guaranteed purity."}
@@ -128,7 +136,15 @@ export default function ProductGrid() {
                       </div>
                       <div className="p-4 sm:p-8 flex flex-col justify-center">
                         <div className="flex items-center gap-2 mb-4">
-                          <span className="text-xs uppercase tracking-[0.2em] text-primary/80 font-medium">{isRTL ? "سبائك الذهب المتميزة" : product.category}</span>
+                          <span className="text-xs uppercase tracking-[0.2em] text-primary/80 font-medium">
+                            {isRTL ? (
+                              <>
+                                سبائك <span className="text-primary">الذهب</span> المتميزة
+                              </>
+                            ) : (
+                              product.category
+                            )}
+                          </span>
                           <div className="flex items-center gap-1">
                             <span className="text-xs text-primary">24K</span>
                           </div>
@@ -198,7 +214,13 @@ export default function ProductGrid() {
               onClick={() => window.location.href = '/gold-bars'}
             >
               <span className="relative z-10 text-sm">
-                {isRTL ? "عرض جميع سبائك الذهب" : "View All Gold Bars"}
+                {isRTL ? (
+                  <>
+                    عرض جميع سبائك <span className="font-semibold">الذهب</span>
+                  </>
+                ) : (
+                  "View All Gold Bars"
+                )}
               </span>
             </button>
           </div>

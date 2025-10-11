@@ -78,7 +78,15 @@ export default function Hero() {
         {/* Elegant Subtitle */}
         <div className="max-w-3xl mx-auto mb-8 sm:mb-10 px-4">
           <p className="text-base sm:text-lg md:text-xl text-white/80 font-light mb-3">
-            {isRTL ? "سبائك وقوالب الذهب الخالص عيار 24" : "Pure 24K Gold Bars & Blocks"}
+            {isRTL ? (
+              <>
+                سبائك وقوالب <span className="bg-gradient-to-r from-primary via-primary/80 to-primary bg-clip-text text-transparent font-semibold">الذهب</span> الخالص عيار 24
+              </>
+            ) : (
+              <>
+                Pure 24K <span className="bg-gradient-to-r from-primary via-primary/80 to-primary bg-clip-text text-transparent font-semibold">Gold</span> Bars & Blocks
+              </>
+            )}
           </p>
           <div className="w-12 sm:w-16 h-px bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mb-4" />
           <p className="text-xs sm:text-sm md:text-base text-white/60 max-w-xl mx-auto leading-relaxed">
@@ -103,7 +111,17 @@ export default function Hero() {
             className="w-full sm:w-auto group border-2 border-primary/30 bg-black/20 backdrop-blur-sm text-white hover:bg-primary/10 hover:border-primary/60 px-4 py-2 text-sm font-medium transition-all duration-300 hover:scale-105"
             data-testid="button-explore"
           >
-            <span className="group-hover:text-primary transition-colors duration-300">{isRTL ? "عرض سبائك الذهب" : "View Gold Bars"}</span>
+            <span className="group-hover:text-primary transition-colors duration-300">
+              {isRTL ? (
+                <>
+                  عرض سبائك <span className="text-primary font-semibold">الذهب</span>
+                </>
+              ) : (
+                <>
+                  View <span className="text-primary font-semibold">Gold</span> Bars
+                </>
+              )}
+            </span>
           </Button>
         </div>
 

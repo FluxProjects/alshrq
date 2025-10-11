@@ -158,18 +158,6 @@ export default function Navbar() {
                   <Phone className="h-4 w-4 mr-2" />
                   {isRTL ? "اتصل بنا" : "Call Us"}
                 </Button>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 hover:from-primary/20 hover:to-primary/10 border border-primary/20 hover:border-primary/40 rounded-xl w-12 h-12 transition-all duration-300"
-                  onClick={() => {
-                    window.location.href = '/admin';
-                    setMobileMenuOpen(false);
-                  }}
-                  data-testid="button-mobile-admin"
-                >
-                  <User className="h-5 w-5 text-gray-300 hover:text-primary transition-colors duration-300" />
-                </Button>
                 <RTLToggle />
               </div>
               

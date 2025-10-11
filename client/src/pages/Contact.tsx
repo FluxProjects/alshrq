@@ -35,7 +35,13 @@ export default function Contact() {
               {isRTL ? "اتصل " : "Contact "}<span className="text-primary">{isRTL ? "بنا" : "Us"}</span>
             </h1>
             <p className="text-muted-foreground text-lg max-w-4xl mx-auto" data-testid="text-contact-description">
-              {isRTL ? "هل لديك سؤال حول مجموعتنا من سبائك الذهب؟ نحن هنا لمساعدتك في العثور على القطعة المثالية." : "Have a question about our gold bar collection? We're here to help you find the perfect piece."}
+              {isRTL ? (
+                <>
+                  هل لديك سؤال حول مجموعتنا من سبائك <span className="text-primary font-semibold">الذهب</span>؟ نحن هنا لمساعدتك في العثور على القطعة المثالية.
+                </>
+              ) : (
+                "Have a question about our gold bar collection? We're here to help you find the perfect piece."
+              )}
             </p>
           </div>
 
@@ -82,7 +88,9 @@ export default function Contact() {
                       {isRTL ? "اتصل بنا" : "Call Us"}
                     </h3>
                     <p className="text-muted-foreground" data-testid="text-phone">
-                      <a href="tel:+97471813696" className="hover:text-primary transition-colors">+974 7181 3696</a>
+                      <a href="tel:+97471813696" className="hover:text-primary transition-colors">
+                        {isRTL ? "+٩٧٤ ٧١٨١ ٣٦٩٦" : "+974 7181 3696"}
+                      </a>
                     </p>
                   </div>
                 </div>

@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Facebook, Instagram, Twitter } from "lucide-react";
+import { Instagram, Twitter } from "lucide-react";
 import { useState, useEffect } from "react";
 import logoImage from '@assets/stock_images/logogold.png';
 
@@ -124,27 +124,25 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="text-center">
             <h3 className="text-sm uppercase tracking-[0.2em] font-semibold text-primary mb-8" data-testid="text-footer-connect">
               {isRTL ? "تواصل" : "Connect"}
             </h3>
-            <div className="flex justify-center space-x-4">
+            <div className={`flex justify-center items-center ${isRTL ? 'space-x-reverse space-x-6' : 'space-x-6'}`}>
+
               <a
-                href="#"
-                className="group h-12 w-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 border border-primary/30 flex items-center justify-center hover:from-primary/30 hover:to-primary/20 hover:border-primary/50 transition-all duration-300 hover:scale-110"
-                data-testid="link-facebook"
-              >
-                <Facebook className="h-5 w-5 text-primary group-hover:text-white transition-colors duration-300" />
-              </a>
-              <a
-                href="#"
+                href="https://www.instagram.com/al.shrq/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group h-12 w-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 border border-primary/30 flex items-center justify-center hover:from-primary/30 hover:to-primary/20 hover:border-primary/50 transition-all duration-300 hover:scale-110"
                 data-testid="link-instagram"
               >
                 <Instagram className="h-5 w-5 text-primary group-hover:text-white transition-colors duration-300" />
               </a>
               <a
-                href="#"
+                href="https://x.com/AlshrqMetals"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group h-12 w-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 border border-primary/30 flex items-center justify-center hover:from-primary/30 hover:to-primary/20 hover:border-primary/50 transition-all duration-300 hover:scale-110"
                 data-testid="link-twitter"
               >

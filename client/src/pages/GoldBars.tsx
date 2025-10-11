@@ -93,10 +93,24 @@ export default function GoldBars() {
             {isRTL ? "مجموعتنا الكاملة" : "Our Complete Collection"}
           </p>
           <h1 className={`${isRTL ? 'font-serif' : 'font-sans'} text-2xl md:text-4xl lg:text-5xl font-light text-white mb-6`}>
-            {isRTL ? "جميع " : "All "}<span className="text-primary font-bold">{isRTL ? "سبائك الذهب" : "Gold Bars"}</span>
+            {isRTL ? (
+              <>
+                جميع <span className="text-primary font-bold">سبائك <span className="text-primary">الذهب</span></span>
+              </>
+            ) : (
+              <>
+                All <span className="text-primary font-bold">Gold Bars</span>
+              </>
+            )}
           </h1>
           <p className="text-white/80 text-lg max-w-3xl mx-auto">
-            {isRTL ? "اكتشف مجموعتنا الكاملة من سبائك الذهب الخالص عيار 24 المعتمدة من LBMA" : "Discover our complete collection of LBMA certified 24K pure gold bars"}
+            {isRTL ? (
+              <>
+                اكتشف مجموعتنا الكاملة من سبائك <span className="text-primary font-semibold">الذهب</span> الخالص عيار 24 المعتمدة من LBMA
+              </>
+            ) : (
+              "Discover our complete collection of LBMA certified 24K pure gold bars"
+            )}
           </p>
         </div>
       </div>
