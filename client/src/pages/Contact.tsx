@@ -65,54 +65,75 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-medium text-foreground mb-2" data-testid="text-address-title">
-                      {isRTL ? "زر معرضنا" : "Visit Our Showroom"}
+                      {isRTL ? "زرنا" : "Visit Us"}
                     </h3>
                     <p className="text-muted-foreground" data-testid="text-address">
-                      {isRTL ? "المنطقة: 56، الشارع: 205" : "ZONE: 56, STREET: 205"}<br />
-                      {isRTL ? "عين خالد، الدوحة، قطر" : "Ain Khaled, Doha, Qatar"}<br />
-                      {isRTL ? "(الشرق)" : "(Alshrq)"}
+                      {isRTL ? "المنطقة: 56، الشارع: 205، مبنى 32، عين خالد، الدوحة، قطر (الشرق)" : "ZONE: 56, STREET: 205, Building 32, Ain Khaled, Doha, Qatar (Alshrq)"}
                     </p>
+                    <a 
+                      href="https://www.google.com/maps/place/25%C2%B013'53.8%22N+51%C2%B026'38.7%22E/@25.2316504,51.441552,16.94z/data=!4m4!3m3!8m2!3d25.2316017!4d51.4440918?hl=en&entry=ttu&g_ep=EgoyMDI1MTAyMC4wIKXMDSoASAFQAw%3D%3D"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center mt-3 text-primary hover:text-primary/80 transition-colors text-sm font-medium"
+                    >
+                      <MapPin className="h-4 w-4 mr-1" />
+                      {isRTL ? "عرض على خرائط جوجل" : "View on Google Maps"}
+                    </a>
+                    <div className="mt-4 rounded-xl overflow-hidden -mx-8 px-8 shadow-sm">
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3607.8!2d51.4440918!3d25.2316017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDEzJzUzLjgiTiA1McKwMjYnMzguNyJF!5e0!3m2!1sen!2sqa!4v1640995200000!5m2!1sen!2sqa"
+                        width="100%"
+                        height="120"
+                        style={{ border: 0 }}
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title={isRTL ? "خريطة موقع الشرق" : "Alshrq Location Map"}
+                      />
+                    </div>
                   </div>
                 </div>
               </Card>
 
-              <Card className="p-8 hover-elevate">
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center">
-                      <Phone className="h-6 w-6 text-primary" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <Card className="p-6 hover-elevate">
+                  <div className="flex items-start space-x-3">
+                    <div className="flex-shrink-0">
+                      <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center">
+                        <Phone className="h-5 w-5 text-primary" />
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-foreground mb-2 text-sm" data-testid="text-phone-title">
+                        {isRTL ? "اتصل بنا" : "Call Us"}
+                      </h3>
+                      <p className="text-muted-foreground text-sm" data-testid="text-phone">
+                        <a href="tel:+97471813696" className="hover:text-primary transition-colors" dir="ltr">
+                          +974 7181 3696
+                        </a>
+                      </p>
                     </div>
                   </div>
-                  <div>
-                    <h3 className="font-medium text-foreground mb-2" data-testid="text-phone-title">
-                      {isRTL ? "اتصل بنا" : "Call Us"}
-                    </h3>
-                    <p className="text-muted-foreground" data-testid="text-phone">
-                      <a href="tel:+97471813696" className="hover:text-primary transition-colors">
-                        {isRTL ? "+٩٧٤ ٧١٨١ ٣٦٩٦" : "+974 7181 3696"}
-                      </a>
-                    </p>
-                  </div>
-                </div>
-              </Card>
+                </Card>
 
-              <Card className="p-8 hover-elevate">
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center">
-                      <Mail className="h-6 w-6 text-primary" />
+                <Card className="p-6 hover-elevate">
+                  <div className="flex items-start space-x-3">
+                    <div className="flex-shrink-0">
+                      <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center">
+                        <Mail className="h-5 w-5 text-primary" />
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-foreground mb-2 text-sm" data-testid="text-email-title">
+                        {isRTL ? "راسلنا بالبريد الإلكتروني" : "Email Us"}
+                      </h3>
+                      <p className="text-muted-foreground text-sm" data-testid="text-email">
+                        <a href="mailto:info@alshrq.qa" className="hover:text-primary transition-colors">info@alshrq.qa</a>
+                      </p>
                     </div>
                   </div>
-                  <div>
-                    <h3 className="font-medium text-foreground mb-2" data-testid="text-email-title">
-                      {isRTL ? "راسلنا بالبريد الإلكتروني" : "Email Us"}
-                    </h3>
-                    <p className="text-muted-foreground" data-testid="text-email">
-                      <a href="mailto:info@alshrq.qa" className="hover:text-primary transition-colors">info@alshrq.qa</a>
-                    </p>
-                  </div>
-                </div>
-              </Card>
+                </Card>
+              </div>
 
               <Card className="p-8 hover-elevate">
                 <div className="flex items-start space-x-4">

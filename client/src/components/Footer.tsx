@@ -54,6 +54,7 @@ export default function Footer() {
               </p>
               <p className="text-white/60 text-sm leading-relaxed">
                 {isRTL ? "المنطقة: 56، الشارع: 205" : "ZONE: 56, STREET: 205"}<br />
+                {isRTL ? "مبنى 32" : "Building 32"}<br />
                 {isRTL ? "عين خالد، الدوحة، قطر" : "Ain Khaled, Doha, Qatar"}
               </p>
             </div>
@@ -163,7 +164,13 @@ export default function Footer() {
               {isRTL ? "© 2024 الشرق للمعادن. جميع الحقوق محفوظة." : "© 2024 Alshrq Metals Trading. All rights reserved."}
             </p>
             <p className="text-xs text-white/60">
-              {isRTL ? "اتصل بنا: +974 7181 3696 | البريد الإلكتروني: info@alshrq.qa" : "Call us: +974 7181 3696 | Email: info@alshrq.qa"}
+              {isRTL ? (
+                <>
+                  اتصل بنا: <span dir="ltr">+974 7181 3696</span> | البريد الإلكتروني: info@alshrq.qa
+                </>
+              ) : (
+                "Call us: +974 7181 3696 | Email: info@alshrq.qa"
+              )}
             </p>
             <p className="text-xs text-primary/80 font-medium">
               {isRTL ? "تاجر الذهب المعتمد في دولة قطر" : "Licensed Gold Dealer in State of Qatar"}
